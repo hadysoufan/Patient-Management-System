@@ -12,6 +12,8 @@ import java.awt.FlowLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class guiAddClinic extends JFrame {
 
@@ -119,10 +121,20 @@ public class guiAddClinic extends JFrame {
                 String NumberOfPatients = nbofpatients.getText();
                 maxnbofpatients = Integer.parseInt(NumberOfPatients);
                 Clinic c = new Clinic(Name, maxnbofpatients);
+
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("clinic.dat",true))) {
+                    bw.write(c.toString());
+                    bw.newLine();
+
+                } catch (Exception event) {
+                    event.printStackTrace();
+                }
                 GUIFirst f = new GUIFirst();
                 dispose();
             }
         });
+
+
     }
 
 }

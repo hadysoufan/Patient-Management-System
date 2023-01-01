@@ -28,13 +28,17 @@ public class Clinic {
         clinicList.add(this);
     }
 
+    /**
+    getters and setters
+     */
     public String getName() {
-        /**
-        getter method for name
-         */
+
         return name;
     }
 
+    public int getMaxNumberOfPatients() {
+        return maxNumberOfPatients;
+    }
 
     public void addPatient(Patient p) {
         /**
@@ -62,6 +66,10 @@ public class Clinic {
     }
 
     public void removePatient(Patient p) {
+        /**
+        void method that removes patient from the listOfPatients it exists,
+         otherwise it will print patient doesn't exist!
+         */
         if (listOfPatients.contains(p)) {
             listOfPatients.remove(p);
         } else {
@@ -70,6 +78,10 @@ public class Clinic {
     }
 
     public void movePatient(Patient p, Clinic c) {
+        /**
+        void method that move a patient from a clinic to another if exists,
+         otherwise it will print patient doesn't exist!
+         */
         if (listOfPatients.contains(p)) {
             listOfPatients.remove(p);
             c.listOfPatients.add(p);
@@ -99,4 +111,12 @@ public class Clinic {
         }
         return details.toString();
     }
+
+    public String toString(){
+        return "Name: " + getName() +
+                "\nMax number Of Patients: " + getMaxNumberOfPatients() +
+                "\n----------------------------------------";
+    }
+
+
 }

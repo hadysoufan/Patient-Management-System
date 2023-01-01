@@ -106,7 +106,8 @@ public class Patient implements Serializable {
                 "\nSex: " + gender +
                 "\nDoctor: " + getDoctor() +
                 "\nMedicalCondition: " + getMedicalCondition() +
-                "\nAppointment: " + getAppointment();
+                "\nAppointment: " + getAppointment() +
+                "\n----------------------------------------";
     }
 
     public void addPrescription(Prescription P) {

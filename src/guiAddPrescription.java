@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class guiAddPrescription extends JFrame {
 
@@ -30,8 +32,8 @@ public class guiAddPrescription extends JFrame {
         cp.setLayout(new GridLayout());
 
         JPanel p1 = new JPanel(new BorderLayout());
-        JPanel p = new JPanel(new GridLayout(1,1));
-        JPanel p2 = new JPanel(new GridLayout(3,8));
+        JPanel p = new JPanel(new GridLayout(2,1));
+        JPanel p2 = new JPanel(new GridLayout(4,8));
 
         /**
          implementing all data fields with the right code
@@ -95,6 +97,8 @@ public class guiAddPrescription extends JFrame {
 //        JPanel p1 = new JPanel(new GridLayout(9, 2, 3, 3));
         p1.add(image);
         p.add(page);
+        p2.add(ID);
+        p2.add(id);
         p2.add(patientID);
         p2.add(patientIds);
         p2.add(Date);
@@ -139,6 +143,14 @@ public class guiAddPrescription extends JFrame {
                 dDuration = drugduration.getText();
                 dAdvice = drugadvice.getText();
                 Prescription p = new Prescription(IDd, patientId, Dat, dName, dType, dDuration, dAdvice);
+
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("prescription.dat",true))) {
+                    bw.write(p.toString());
+                    bw.newLine();
+
+                } catch (Exception event) {
+                    event.printStackTrace();
+                }
                 GUIFirst f = new GUIFirst();
                 dispose();
             }

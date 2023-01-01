@@ -84,11 +84,11 @@ public class addPatient extends JFrame {
                 }
                 if (x == 0) {
                     result.setVisible(true);
-                    result.setText("             Clinic not found!");
+                    result.setText("Clinic not found!");
                 }
                 if (x == 1) {
                     result.setVisible(true);
-                    result.setText("             Patient not found!");
+                    result.setText("Patient not found!");
                 }
             }
         });

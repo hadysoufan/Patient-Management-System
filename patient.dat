@@ -8,6 +8,7 @@ Sex: Female
 Doctor: Julia
 MedicalCondition: Sick
 Appointment: 2020-05-09T08:50
+----------------------------------------
 
 Patient Name: Melia
 ID: 2
@@ -18,6 +19,7 @@ Sex: Female
 Doctor: Sam
 MedicalCondition: HeadAce
 Appointment: 2009-04-17T11:30
+----------------------------------------
 
 Patient Name: Zayn
 ID: 3
@@ -28,3 +30,15 @@ Sex: Female
 Doctor: Alex
 MedicalCondition: Cancer
 Appointment: 2019-04-05T03:10
+----------------------------------------
+
+Patient Name: Julia
+ID: 4
+PhoneNumber: 76444321
+Address: Chouf
+DateOfBirth: Wed Sep 18 00:00:00 EEST 2002
+Sex: Female
+Doctor: Amanda
+MedicalCondition: Cancer
+Appointment: 2023-03-02T11:00
+----------------------------------------

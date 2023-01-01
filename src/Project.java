@@ -84,8 +84,10 @@ public class Project {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("prescription.dat"))) {
 
             for (Prescription pre : prescriptions) {
-                bw.write(pre.toString());
+                int i = 0;
+                bw.write(pre.showPrescription(i));
                 bw.newLine();
+                i++;
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Prescription implements Serializable {
 
     /**
-    data fields
+     * data fields
      */
     private final int ID;
     private int patientID;
@@ -19,7 +19,7 @@ public class Prescription implements Serializable {
     public Prescription(int ID, int patientID, String Date, String drugName,
                         String drugType, String drugDuration, String drugAdvice) {
         /**
-        Prescription constructor with 7 args
+         Prescription constructor with 7 args
          */
         this.ID = ID;
         this.patientID = patientID;
@@ -37,7 +37,7 @@ public class Prescription implements Serializable {
     }
 
     /**
-    getters and setters
+     * getters and setters
      */
     public int getID() {
         return ID;
@@ -45,12 +45,22 @@ public class Prescription implements Serializable {
 
     public String showPrescription(int ID) {
         /**
-        String method that returns all the details of the Prescription
+         String method that returns all the details of the Prescription
          */
         return "Drug Name: " + ids.get(ID).drugName +
                 "\nType: " + ids.get(ID).drugType +
                 "\nDate: " + ids.get(ID).Date +
                 "\nAdvice: " + ids.get(ID).drugAdvice +
-                "\nduration" + ids.get(ID).drugDuration;
+                "\nduration" + ids.get(ID).drugDuration +
+                "\n----------------------------------------";
+    }
+
+    public String toString(){
+        return "Drug Name: " + ids.get(ID).drugName +
+                "\nType: " + ids.get(ID).drugType +
+                "\nDate: " + ids.get(ID).Date +
+                "\nAdvice: " + ids.get(ID).drugAdvice +
+                "\nduration" + ids.get(ID).drugDuration +
+                "\n----------------------------------------";
     }
 }
